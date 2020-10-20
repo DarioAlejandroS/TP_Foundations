@@ -11,7 +11,6 @@ RUN pip install regex
 RUN pip install sqlalchemy
 RUN pip install sqlalchemy-utils
 RUN pip install psycopg2
-RUN pip install kaggle
 
 RUN mkdir /home/data
 RUN mkdir /var/Output
