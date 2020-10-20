@@ -12,7 +12,6 @@ cur = conn.cursor()
 print('PostgreSQL database version:')
 cur.execute('SELECT version()')
 
-# display the PostgreSQL database server version
 db_version = cur.fetchone()
 print(db_version)
 
@@ -24,5 +23,4 @@ df = pd.DataFrame(rows, columns =['year_month', 'month_of_release', 'passenger_t
 
 print("Operation done successfully")
 
-# close the communication with the PostgreSQL
 cur.close()
