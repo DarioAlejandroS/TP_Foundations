@@ -1,29 +1,15 @@
 import pandas
 import requests
-import csv, re
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists
 from sqlalchemy_utils import create_database
 
-url = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets'
+url = 'https://www.stats.govt.nz/assets/Uploads/International-migration/International-migration-June-2020/Download-data/international-migration-June-2020-citizenship-by-visa-by-country-of-last-permanent-residence2.csv'
 r = requests.get(url, allow_redirects=True)
 
-orig = r.content
+open('database.csv', 'w').write(r.content.decode("utf-8"))
 
-# Split the long string into a list of lines
-data = orig.decode('utf-8').splitlines()
-
-# Open the file for writing
-with open("database.csv", "w") as csv_file:
-# Create the writer object with tab delimiter
-    writer = csv.writer(csv_file, delimiter = '\t')
-    for line in data:
-        # Writerow() needs a list of data to be written, so split at all empty spaces in the line
-        writer.writerow(re.split('\s+',line))
-        
-db = pandas.read_csv("database.csv")
-
-db = db.rename(columns={"dec": "deci"})
+db = pandas.read_csv("database.csv", error_bad_lines=False)
 
 def db_create(engine_url, dataframe, table_name):
     """
@@ -38,5 +24,5 @@ def db_create(engine_url, dataframe, table_name):
         data_type = table_name
         print('Populating database with', data_type)
         dataframe.to_sql(data_type, engine)
-#db_create('postgresql://root:pos@localhost:5432/db',db,"exo")
+
 db_create('postgresql://root:pos@172.18.0.2:5432/db',db,"exo")
