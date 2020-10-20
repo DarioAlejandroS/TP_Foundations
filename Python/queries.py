@@ -17,7 +17,7 @@ db_version = cur.fetchone()
 print(db_version)
 
 cur = conn.cursor()
-cur.execute("SELECT koi_disposition, koi_score, koi_depth, koi_prad, koi_steff FROM exo")
+cur.execute("SELECT * FROM exo")
 rows = cur.fetchall()
 
 for row in rows:
