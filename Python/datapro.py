@@ -12,9 +12,7 @@ open('database.csv', 'w').write(r.content.decode("utf-8"))
 db = pandas.read_csv("database.csv", error_bad_lines=False)
 
 def db_create(engine_url, dataframe, table_name):
-    """
-    Check if postgres db exists, if not creates it
-    """
+    
     engine = create_engine(engine_url)
     if not database_exists(engine.url):
         print("Database does not exist, creating...")
