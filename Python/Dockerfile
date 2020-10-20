@@ -1,5 +1,3 @@
-#publicly available docker image "python" on docker hub will be pulled
-
 FROM amancevice/pandas:1.1.3
 
 ENV FLASK_ENV=development
