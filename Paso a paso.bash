@@ -1,7 +1,6 @@
 #Crear imagen 
-#-t "nombre" para setearle nombre a la imagen
-#docker build [OPTIONS] PATH | URL | -
 docker build -t posi .
+docker build -t pythoni .
 #Correr imagen
 #docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 #--name "nombre" para setearle un nombre al container
