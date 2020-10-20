@@ -19,13 +19,8 @@ print(db_version)
 cur = conn.cursor()
 cur.execute("SELECT * FROM exo")
 rows = cur.fetchall()
-
-for row in rows:
-    print("ADMISSION =", row[0])
-    print("NAME =", row[1])
-    print("AGE =", row[2])
-    print("COURSE =", row[3])
-    print("DEPARTMENT =", row[4], "\n")
+df = pd.DataFrame(rows, columns =['year_month', 'month_of_release', 'passenger_type', 'direction', 'citizenship', 'visa', 
+'country_of_residence', 'estimate', 'standard_error', 'status'])
 
 print("Operation done successfully")
 
