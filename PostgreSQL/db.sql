@@ -85,4 +85,3 @@ st_radn float,
 pl_nnotes float,
 rowupdate date,
 pl_facility varchar(255));
-
