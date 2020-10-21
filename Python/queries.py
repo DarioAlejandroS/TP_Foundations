@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 import psycopg2
 
 conn = psycopg2.connect(
