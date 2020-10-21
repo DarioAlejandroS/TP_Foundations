@@ -15,7 +15,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(pais,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('residencia.png')
+plt.savefig('/var/output/residencia.png')
 #Estado de la ciudadania
 citizenship=df.groupby(by=["status"]).count()
 #citizenship=citizenship.loc[citizenship["estimate"]]
@@ -27,7 +27,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(status,ciudadania)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('ciudadania.png')
+plt.savefig('/var/output/ciudadania.png')
 # Que tipo de visa y cuantas hay
 visa=df.groupby(by=["visa"]).count()
 visa=visa/np.sum(visa["status"].to_numpy())*100
@@ -38,7 +38,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(tipo,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('visa.png')
+plt.savefig('/var/output/visa.png')
 #Cuantos Estudiantes x pais hay
 estudiantes=df.loc[df["visa"]=="Student"]
 estudiantesporpais=estudiantes.groupby(by=["country_of_residence"]).count()
@@ -50,7 +50,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(pais,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('estudiantes.png')
+plt.savefig('/var/output/estudiantes.png')
 #Cuantos Argentinos status de tramite
 argentinos=df.loc[df["country_of_residence"]=="Argentina"]
 argentinosfinalizado=argentinos.groupby(by=["status"]).count()
@@ -62,16 +62,4 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(tipo,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('argentinos.png')
-
-# Template handling
-env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath=''))
-template = env.get_template('template.html')
-html = template.render(my_table=styler.render())
-
-# Write the HTML file
-with open('report.html', 'w') as f:
-    f.write(html)
-
-from shutil import copyfile
-copyfile("report.html", "/var/output/report.html")
+plt.savefig('/var/output/argentinos.png')

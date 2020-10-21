@@ -9,7 +9,6 @@ RUN pip install regex
 RUN pip install sqlalchemy
 RUN pip install sqlalchemy-utils
 RUN pip install psycopg2
-RUN pip install jinja2
 
 RUN mkdir /var/output
 
@@ -17,5 +16,6 @@ COPY datapro.py /home/datapro.py
 COPY server.py /home/server.py
 COPY queries.py /home/queries.py
 COPY queries2.py /home/queries2.py
+COPY report.html /var/output/report.html
 
 ENTRYPOINT ["python", "/home/server.py"]
