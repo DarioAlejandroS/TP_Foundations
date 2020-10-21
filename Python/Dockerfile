@@ -16,6 +16,6 @@ COPY datapro.py /home/datapro.py
 COPY server.py /home/server.py
 COPY queries.py /home/queries.py
 COPY queries2.py /home/queries2.py
-COPY report.html /var/output/report.html
+COPY report.html /home/report.html
 
 ENTRYPOINT ["python", "/home/server.py"]

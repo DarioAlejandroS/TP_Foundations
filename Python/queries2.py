@@ -63,3 +63,6 @@ ax.bar(tipo,cantidad)
 plt.xticks(rotation=90)
 plt.show()
 plt.savefig('/var/output/argentinos.png')
+
+from shutil import copyfile
+copyfile("/home/report.html","/var/output/report.html")
