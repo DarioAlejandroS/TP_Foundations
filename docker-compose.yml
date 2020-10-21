@@ -21,6 +21,8 @@ services:
      ports:
        - "5000:5000"
      restart: always
+     volumes:
+        - "C:/Users/Dario/Desktop/Vol:/var/output"
 networks:
     net:
         driver: bridge

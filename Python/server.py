@@ -14,6 +14,7 @@ def run_datapro():
             # In Linux
             os.system ("python /home/datapro.py")
             os.system ("python /home/queries.py")
+            os.system ("python /home/queries2.py")
             return "Entre en Linux"
 
 app.run(debug=True, host='0.0.0.0', port=5000)
