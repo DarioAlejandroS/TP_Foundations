@@ -15,7 +15,6 @@ La estructura de la solución es la siguiente:
              - PostgreSQL/
              - Python/
             docker-compose.yml
-            Ejecutar Linux.sh
             Ejecutar Windows.bat
             README.md
 En la carpeta PostgreSQL se encuentran los archivos necesarios para generar la imagen de Docker que contiene la base de datos en PostgreSQL.
@@ -32,13 +31,10 @@ NOTA: el archivo _server.py_ permite que la ejecución se realice mediante un na
 ### Pasos para ejecutar la solución:
 
 1. Descargar las carpetas respetando la estructura mencionada en la sección anterior.
-2. En BASH/PowerShell dirigirse a la carpeta TP_FOUNDATIONS. Dependiendo del sistema operativo debe hacerse lo siguiente:
-    * Windows:
-        Editar el archivo "Ejecutar Windows.bat" y modificar el valor de la variable _volumen_ por una ruta donde se montará un volumen para extraer los resultados. Por ejemplo: "C:/Users/Dario/Desktop/Vol"
-    * Linux:
-        Editar el archivo "Ejecutar Linux.sh" y modificar el valor de la variable _volumen_ por una ruta donde se montará un volumen para extraer los resultados. Por ejemplo: "/home/Test"
+2. En CMD/PowerShell dirigirse a la carpeta TP_FOUNDATIONS.
+    * Editar el archivo "Ejecutar Windows.bat" y modificar el valor de la variable _volumen_ por una ruta donde se montará un volumen para extraer los resultados. Por ejemplo: "C:/Users/Dario/Desktop/Vol"
     NOTA: Los directorios deben estar creados antes de ejecutar los archivos por lotes.
-3. Ejecutar el archivo "Ejecutar Windows/Linux.bat/sh"
+3. Ejecutar el archivo "Ejecutar Windows.bat"
 4. Dirigirse a la ruta _volumen_ para extraer el informe y los gráficos.
 
 Para consultas y/o sugerencias contactar a dario.sella@gmail.com
