@@ -22,7 +22,7 @@ services:
        - "5000:5000"
      restart: always
      volumes:
-        - "C:/Users/Dario/Desktop/Vol:/var/output"
+         - myvolume:/var/output
 networks:
     net:
         driver: bridge
@@ -31,3 +31,6 @@ networks:
             config: 
                 - subnet: 172.18.0.0/16
                   gateway: 172.18.0.1
+volumes:
+  myvolume:
+    external: true

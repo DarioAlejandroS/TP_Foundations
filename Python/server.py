@@ -12,6 +12,7 @@ def run_datapro():
             return "Entre en windows"
        else:
             # In Linux
+            print("Por favor espere mientras se ejecutan las tareas.")
             os.system ("python /home/datapro.py")
             os.system ("python /home/queries.py")
             os.system ("python /home/queries2.py")
