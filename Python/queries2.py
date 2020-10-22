@@ -15,7 +15,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(pais,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('/var/output/residencia.png')
+plt.savefig('/var/output/residencia.png', bbox_inches='tight')
 #Estado de la ciudadania
 citizenship=df.groupby(by=["status"]).count()
 #citizenship=citizenship.loc[citizenship["estimate"]]
@@ -27,7 +27,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(status,ciudadania)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('/var/output/ciudadania.png')
+plt.savefig('/var/output/ciudadania.png', bbox_inches='tight')
 # Que tipo de visa y cuantas hay
 visa=df.groupby(by=["visa"]).count()
 visa=visa/np.sum(visa["status"].to_numpy())*100
@@ -38,7 +38,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(tipo,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('/var/output/visa.png')
+plt.savefig('/var/output/visa.png', bbox_inches='tight')
 #Cuantos Estudiantes x pais hay
 estudiantes=df.loc[df["visa"]=="Student"]
 estudiantesporpais=estudiantes.groupby(by=["country_of_residence"]).count()
@@ -50,7 +50,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(pais,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('/var/output/estudiantes.png')
+plt.savefig('/var/output/estudiantes.png', bbox_inches='tight')
 #Cuantos Argentinos status de tramite
 argentinos=df.loc[df["country_of_residence"]=="Argentina"]
 argentinosfinalizado=argentinos.groupby(by=["status"]).count()
@@ -62,7 +62,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.bar(tipo,cantidad)
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('/var/output/argentinos.png')
+plt.savefig('/var/output/argentinos.png', bbox_inches='tight')
 
 from shutil import copyfile
 copyfile("/home/report.html","/var/output/report.html")
