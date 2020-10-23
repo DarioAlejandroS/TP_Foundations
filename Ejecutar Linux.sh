@@ -1,4 +1,4 @@
-vol1=/home/dario/Desktop/Docker
+vol1=/home/dario/Desktop/Files
 cd PostgreSQL
 docker build -t posi .
 cd ..
